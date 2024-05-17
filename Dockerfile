@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.authors="admin@minenet.at"
 LABEL org.opencontainers.image.source="https://github.com/ich777/docker-steamcmd-server"
 
 RUN apt-get update && \
-	apt-get -y install --no-install-recommends curl unzip jq lib32gcc-s1 screen xvfb winbind xauth winetricks && \
+	apt-get -y install --no-install-recommends curl unzip jq lib32gcc-s1 screen xvfb winbind xauth && \
 	rm -rf /var/lib/apt/lists/*
 
 ENV DATA_DIR="/serverdata"
@@ -20,6 +20,7 @@ ENV VR_QUERY_PORT=27016
 ENV VR_PASSWORD=""
 ENV VR_LOWER_FPS_WHEN_EMPTY=true
 ENV VR_LOWER_FPS_WHEN_EMPTY_VALUE=15
+ENV VR_PRESET=StandardPvE
 ENV VR_DIFFICULTY_PRESET=Difficulty_Brutal
 ENV VR_RCON_ENABLED=false
 ENV VR_RCON_PORT=25575
